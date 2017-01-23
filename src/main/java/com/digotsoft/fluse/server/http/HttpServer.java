@@ -1,4 +1,4 @@
-package com.digotsoft.fluse.server;
+package com.digotsoft.fluse.server.http;
 
 import com.digotsoft.fluse.server.configuration.Configuration;
 import io.netty.bootstrap.ServerBootstrap;

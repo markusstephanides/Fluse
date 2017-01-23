@@ -29,22 +29,31 @@ public class RouteMatcher {
 
 
     public RouteContext matchRoute( String uri ) {
-        for ( Route wildcardRoute : this.wildcardRoutes ) {
-            String[] splittedKey = wildcardRoute.getUri().split( "/" );
-            String[] splittedUri = uri.split( "/" );
 
-            for ( int i = 0; i < splittedKey.length; i++ ) {
-                if ( splittedKey[i].equals( "*" ) ) {
-                    // We found the matching route
-                    return new RouteContext( wildcardRoute, splittedKey, splittedUri, i );
-                } else if ( !splittedKey[i].equals( splittedUri[i] ) ) {
-                    // Thats a bad start, so it can't be the current route
-                    break;
+        if( uri.equals( "/" ) ) {
+            // Search for an index document
+
+        }
+        else {
+            for ( Route wildcardRoute : this.wildcardRoutes ) {
+                String[] splittedKey = wildcardRoute.getUri().split( "/" );
+                String[] splittedUri = uri.split( "/" );
+
+                for ( int i = 0; i < splittedKey.length; i++ ) {
+                    if ( splittedKey[i].equals( "*" ) ) {
+                        // We found the matching route
+                        return new RouteContext( wildcardRoute, splittedKey, splittedUri, i );
+                    } else if ( !splittedKey[i].equals( splittedUri[i] ) ) {
+                        // Thats a bad start, so it can't be the current route
+                        break;
+                    }
+
                 }
 
             }
-
         }
+
+
 
         return null;
     }

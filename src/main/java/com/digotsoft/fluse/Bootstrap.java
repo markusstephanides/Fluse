@@ -1,6 +1,7 @@
-package com.digotsoft.fluse.server;
+package com.digotsoft.fluse;
 
 import com.digotsoft.fluse.server.configuration.Configuration;
+import com.digotsoft.fluse.server.http.HttpServer;
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
