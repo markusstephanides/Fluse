@@ -1,7 +1,6 @@
-package com.digotsoft.fluse.transpreter.function;
+package com.digotsoft.fluse.transpreter.component;
 
 import com.digotsoft.fluse.transpreter.Type;
-import com.digotsoft.fluse.transpreter.clazz.FluseClass;
 
 import java.util.Map;
 
@@ -16,5 +15,6 @@ public class FluseFunction {
     private FluseClass returnType;
     private Map<String, FluseClass> parameters;
     private String name;
+    private AccessLevel accessLevel;
 
 }

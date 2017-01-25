@@ -20,7 +20,6 @@ public class FileLoader {
             localPathArr[j + 1] = context.getSplittedUri()[j + context.getIndex()];
         }
         String filePath = String.join( "/", localPathArr );
-        System.out.println(filePath);
         File file = new File( filePath );
 
         if ( file.exists() ) {
@@ -33,7 +32,7 @@ public class FileLoader {
 
     public FileInformation loadFile( String filePath ) throws IOException {
         File file = new File( filePath );
-        System.out.println(filePath);
+
         if ( file.exists() ) {
             Path path = file.toPath();
             return new FileInformation( Files.readAllBytes( path ), Files.probeContentType( path ) );

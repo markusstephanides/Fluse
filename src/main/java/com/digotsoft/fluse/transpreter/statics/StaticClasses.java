@@ -1,7 +1,8 @@
 package com.digotsoft.fluse.transpreter.statics;
 
 import com.digotsoft.fluse.transpreter.Type;
-import com.digotsoft.fluse.transpreter.clazz.FluseClass;
+import com.digotsoft.fluse.transpreter.component.AccessLevel;
+import com.digotsoft.fluse.transpreter.component.FluseClass;
 import com.digotsoft.fluse.transpreter.processing.JSClassToClassDescription;
 
 import java.util.Arrays;
@@ -16,7 +17,7 @@ public class StaticClasses {
 
     public static Set<FluseClass> classes = new LinkedHashSet<>(
             Arrays.asList(
-                    new FluseClass( "Console", new JSClassToClassDescription( "console" ), Type.CLIENT )
+                    new FluseClass( "Console", Type.CLIENT, new JSClassToClassDescription( "console" ), AccessLevel.PUBLIC)
             )
     );
 
